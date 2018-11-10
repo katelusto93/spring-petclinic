@@ -29,6 +29,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PetClinicApplication {
 
     public static void main(String[] args) {
+        System.out.println("small changes to test Jenkins trigger");
         SpringApplication.run(PetClinicApplication.class, args);
     }
 
