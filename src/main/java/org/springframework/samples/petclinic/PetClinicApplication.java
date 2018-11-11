@@ -29,7 +29,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PetClinicApplication {
 
     public static void main(String[] args) {
-        System.out.println("small changes to test Jenkins trigger");
+        int target = -5;
+        int num = 3;
+        target = -num;  // Noncompliant; target = -3. Is that really what's meant?
+        target = +num; // Noncompliant; target = 3
         SpringApplication.run(PetClinicApplication.class, args);
     }
 
