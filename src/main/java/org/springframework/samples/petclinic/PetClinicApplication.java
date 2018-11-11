@@ -19,6 +19,8 @@ package org.springframework.samples.petclinic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.math.BigDecimal;
+
 /**
  * PetClinic Spring Boot Application.
  *
@@ -29,10 +31,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PetClinicApplication {
 
     public static void main(String[] args) {
-        int target = -5;
-        int num = 3;
-        target = -num;  // Noncompliant; target = -3. Is that really what's meant?
-        target = +num; // Noncompliant; target = 3
+        double d = 1.1;
+
+        BigDecimal bd1 = new BigDecimal(d); // Noncompliant; see comment above
+        BigDecimal bd2 = new BigDecimal(1.1); // Noncompliant; same result
         SpringApplication.run(PetClinicApplication.class, args);
     }
 
